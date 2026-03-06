@@ -7,7 +7,7 @@ const MainLayouts = () => {
         <div>
             {/* Navbar */}
             <div className='container mx-auto'>
-                <Navbar></Navbar>
+                {/* <Navbar></Navbar> */}
             </div>
             {/* Components */}
             <div className='min-h-[calc(100vh-357px)]'>

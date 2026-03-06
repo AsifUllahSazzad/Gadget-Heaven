@@ -2,16 +2,15 @@ import { BsCart3 } from "react-icons/bs";
 import { NavLink } from "react-router-dom";
 import { FaRegHeart } from "react-icons/fa";
 
-const Navbar = () => {
-
-    const links = <>
-            <NavLink className={'text-[rgba(11,11,11,0.7)]'}><li>Home</li></NavLink>
-            <NavLink className={'text-[rgba(11,11,11,0.7)]'}><li>Statistics</li></NavLink>
-            <NavLink className={'text-[rgba(11,11,11,0.7)]'}><li>Dashboard</li></NavLink>
+const HomeNavbar = () => {
+     const links = <>
+            <NavLink className={'text-white'}><li>Home</li></NavLink>
+            <NavLink className={'text-white'}><li>Statistics</li></NavLink>
+            <NavLink className={'text-white'}><li>Dashboard</li></NavLink>
     </>
 
-  return ( 
-      <div className="navbar bg-base-100">
+  return (
+      <div className="navbar text-white">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -53,4 +52,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default HomeNavbar;
