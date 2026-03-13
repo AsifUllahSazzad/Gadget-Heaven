@@ -1,18 +1,18 @@
-import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Outlet } from 'react-router-dom';
 
 const MainLayouts = () => {
     return (
-        <div>
+        <div className='flex flex-col bg-[rgba(246,246,246,1)]'>
             {/* Navbar */}
             <div className='container mx-auto'>
                 {/* <Navbar></Navbar> */}
             </div>
+
             {/* Components */}
-            <div className='min-h-[calc(100vh-357px)]'>
+            <main className='grow min-h-screen'>
                 <Outlet></Outlet>
-            </div>
+            </main>
 
             {/* Footer */}
             <Footer

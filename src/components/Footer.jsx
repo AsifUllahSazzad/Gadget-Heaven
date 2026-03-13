@@ -1,8 +1,6 @@
-import React from 'react';
-
 const Footer = ({title, subtitle}) => {
     return (
-        <div className='container mx-auto'>
+        <div className='container mx-auto mb-10 2xl:mt-5 mt-14'>
 
             <div className='text-center space-y-3 pb-5'>
                 <h1 className='text-3xl font-bold'>{title}</h1>
@@ -11,7 +9,7 @@ const Footer = ({title, subtitle}) => {
 
             <hr className='text-[rgba(9,8,15,0.1)]'/>
 
-    <footer className="footer sm:footer-horizontal text-base-content justify-evenly pb-10 pt-5">
+    <footer className="footer sm:footer-horizontal text-base-content justify-evenly pt-5">
     <nav className='place-items-center'>
         <h6 className="font-bold text-lg">Services</h6>
         <a className="link link-hover text-[rgba(9,8,15,0.6)]">Product Support</a>

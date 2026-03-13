@@ -1,0 +1,210 @@
+[
+  {
+    "id": 1,
+    "name": "iPhone 15 Pro",
+    "price": 1199,
+    "stock_status": "In Stock",
+    "description": "Apple flagship smartphone with A17 Pro chip.",
+    "specification": {
+      "display": "6.1-inch Super Retina XDR",
+      "processor": "A17 Pro",
+      "storage": "256GB",
+      "camera": "48MP"
+    },
+    "rating": 4.8,
+    "image": "https://i.ibb.co/8nTV02yC/apple-iphone-15-pro-1-removebg-preview.png",
+    "category": "Phone"
+  },
+  {
+    "id": 2,
+    "name": "Samsung Galaxy S24",
+    "price": 999,
+    "stock_status": "In Stock",
+    "description": "Premium Android phone with powerful AI features.",
+    "specification": {
+      "display": "6.2-inch AMOLED",
+      "processor": "Snapdragon 8 Gen 3",
+      "storage": "256GB"
+    },
+    "rating": 4.6,
+    "image": "https://i.ibb.co/xt6Lm5wJ/samsung-galaxy-s24-5g-sm-s921-1-removebg-preview.png",
+    "category": "Phone"
+  },
+  {
+    "id": 3,
+    "name": "Google Pixel 8 Pro",
+    "price": 899,
+    "stock_status": "In Stock",
+    "description": "Google phone with advanced AI camera.",
+    "specification": {
+      "display": "6.7-inch OLED",
+      "processor": "Google Tensor G3",
+      "storage": "128GB"
+    },
+    "rating": 4.7,
+    "image": "https://i.ibb.co/39WJGXKs/google-pixel-8-pro-1-removebg-preview.png",
+    "category": "Phone"
+  },
+  {
+    "id": 4,
+    "name": "MacBook Pro M3",
+    "price": 1999,
+    "stock_status": "In Stock",
+    "description": "Powerful laptop for professionals.",
+    "specification": {
+      "display": "14-inch Retina",
+      "processor": "Apple M3",
+      "ram": "16GB",
+      "storage": "512GB SSD"
+    },
+    "rating": 4.9,
+    "image": "https://i.ibb.co/1t1gKtPb/Mac-Book-Pro-M3-14inch-Space-Gray-8357-removebg-preview.png",
+    "category": "Laptop"
+  },
+  {
+    "id": 5,
+    "name": "Dell XPS 13",
+    "price": 1499,
+    "stock_status": "In Stock",
+    "description": "Compact premium ultrabook.",
+    "specification": {
+      "display": "13.4-inch FHD+",
+      "processor": "Intel Core i7",
+      "ram": "16GB"
+    },
+    "rating": 4.7,
+    "image": "https://i.ibb.co/nMffkMv9/xps-13-9345-laptop-silver-copilot-pc-mg-removebg-preview.png",
+    "category": "Laptop"
+  },
+  {
+    "id": 6,
+    "name": "HP Spectre x360",
+    "price": 1399,
+    "stock_status": "In Stock",
+    "description": "Convertible 2-in-1 premium laptop.",
+    "specification": {
+      "display": "13.5-inch OLED",
+      "processor": "Intel Core i7",
+      "ram": "16GB"
+    },
+    "rating": 4.6,
+    "image": "https://i.ibb.co/CpgXRFfS/HP-Spectre-x360-14-inch-2-in-1-Laptop-2024-14th-Gen-ultra-Laptop-price-in-Bangladesh-MC-Solution-BD.png",
+    "category": "Laptop"
+  },
+  {
+    "id": 7,
+    "name": "Asus ROG Zephyrus G14",
+    "price": 1799,
+    "stock_status": "In Stock",
+    "description": "High-performance gaming laptop.",
+    "specification": {
+      "processor": "Ryzen 9",
+      "gpu": "RTX 4060",
+      "ram": "16GB"
+    },
+    "rating": 4.7,
+    "image": "https://i.ibb.co/tpHSkR8Y/h732.png",
+    "category": "Laptop"
+  },
+  {
+    "id": 8,
+    "name": "iPad Air 5",
+    "price": 699,
+    "stock_status": "In Stock",
+    "description": "Lightweight tablet with Apple M1 chip.",
+    "specification": {
+      "display": "10.9-inch Retina",
+      "processor": "Apple M1",
+      "storage": "256GB"
+    },
+    "rating": 4.6,
+    "image": "https://i.ibb.co/HJFF42t/4973-48920-removebg-preview.png",
+    "category": "Tablet"
+  },
+  {
+    "id": 9,
+    "name": "Samsung Galaxy Tab S9",
+    "price": 799,
+    "stock_status": "In Stock",
+    "description": "High-end Android tablet with AMOLED display.",
+    "specification": {
+      "display": "11-inch AMOLED",
+      "processor": "Snapdragon 8 Gen 2",
+      "storage": "256GB"
+    },
+    "rating": 4.7,
+    "image": "https://i.ibb.co/JFmT4dFP/Galaxy-Tab-S9-Graphite-3477-removebg-preview.png",
+    "category": "Tablet"
+  },
+  {
+    "id": 10,
+    "name": "Lenovo Tab P12",
+    "price": 499,
+    "stock_status": "In Stock",
+    "description": "Large display Android tablet.",
+    "specification": {
+      "display": "12.7-inch LCD",
+      "storage": "256GB"
+    },
+    "rating": 4.3,
+    "image": "https://i.ibb.co/krZHgX3/Lenovo-Tab-P12-Pro-price-in-bangladesh-price-in-bangladesh-MC-Solution-BD-1-removebg-preview.png",
+    "category": "Tablet"
+  },
+  {
+    "id": 11,
+    "name": "Apple Watch Series 9",
+    "price": 429,
+    "stock_status": "In Stock",
+    "description": "Advanced smartwatch with health tracking.",
+    "specification": {
+      "display": "Always-On Retina",
+      "battery": "18 hours",
+      "features": "ECG, Heart Rate"
+    },
+    "rating": 4.8,
+    "image": "https://i.ibb.co/fYV6CRvf/apple-watch-series-9-midnight-removebg-preview.png",
+    "category": "Smart Watch"
+  },
+  {
+    "id": 12,
+    "name": "Samsung Galaxy Watch 6",
+    "price": 349,
+    "stock_status": "In Stock",
+    "description": "Smartwatch with sleep and health tracking.",
+    "specification": {
+      "display": "AMOLED",
+      "battery": "40 hours"
+    },
+    "rating": 4.7,
+    "image": "https://i.ibb.co/CKzTFFYg/Galaxy-Watch6-Classic-Silver-6323-removebg-preview.png",
+    "category": "Smart Watch"
+  },
+  {
+    "id": 13,
+    "name": "Amazfit GTR 4",
+    "price": 199,
+    "stock_status": "In Stock",
+    "description": "Smartwatch with long battery life.",
+    "specification": {
+      "display": "1.43-inch AMOLED",
+      "battery": "14 days"
+    },
+    "rating": 4.5,
+    "image": "https://i.ibb.co/prf3q3gR/Amazfit-GTR-4.webp",
+    "category": "Smart Watch"
+  },
+  {
+    "id": 14,
+    "name": "Fitbit Versa 4",
+    "price": 229,
+    "stock_status": "In Stock",
+    "description": "Fitness smartwatch with health tracking.",
+    "specification": {
+      "display": "AMOLED",
+      "battery": "6 days"
+    },
+    "rating": 4.4,
+    "image": "https://i.ibb.co/mVZkHx1r/61-CZSo-Sn-VPL-AC-SL1500-removebg.png",
+    "category": "Smart Watch"
+  }
+]
