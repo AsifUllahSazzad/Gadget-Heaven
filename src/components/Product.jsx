@@ -1,33 +1,30 @@
-import React from 'react';
+const Product = ({ product }) => {
+  const { id, image, name, price } = product;
 
-const Product = ({product}) => {
-
-    const {id, image, name, price} = product;
-
-
-    return (
-        <div>
-            
-            <div className="card bg-base-100 w-96 shadow-sm rounded-2xl">
-  <div className='p-5'>
-    <figure className='w-full h-70 flex items-center justify-center bg-gray-100 p-5 rounded-xl'>
-    <img
-    className='w-full h-full object-contain'
-      src={image}
-      alt={name} />
-  </figure>
-  </div>
-  <div className="card-body">
-    <h2 className="card-title">{name}</h2>
-    <h3 className='text-[rgba(9,8,15,0.6)] text-lg font-medium'>Price: {price}</h3>
-    <div className="card-actions justify-start">
-      <button className="btn btn-primary">View Details</button>
-    </div>
-  </div>
-</div>
-
+  return (
+    <div>
+      <div className="card bg-base-100 w-96 shadow-sm rounded-2xl">
+        <div className="p-5">
+          <figure className="w-full h-70 flex items-center justify-center bg-gray-100 p-5 rounded-xl">
+            <img
+              className="w-full h-full object-contain"
+              src={image}
+              alt={name}
+            />
+          </figure>
         </div>
-    );
+        <div className="card-body">
+          <h2 className="card-title">{name}</h2>
+          <h3 className="text-[rgba(9,8,15,0.6)] text-lg font-medium">
+            Price: {price}
+          </h3>
+          <div className="card-actions justify-start">
+            <button className="btn btn-primary">View Details</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Product;

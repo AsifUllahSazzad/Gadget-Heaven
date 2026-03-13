@@ -4,7 +4,6 @@ import Home from '../pages/Home';
 import Statistics from '../pages/Statistics';
 import Dashboard from '../pages/Dashboard';
 import Products from '../components/Products';
-import SideCategory from '../components/SideCategory';
 
 const routes = createBrowserRouter([
     {
@@ -15,7 +14,7 @@ const routes = createBrowserRouter([
                 path: '/',
                 element: <Home></Home>,
                 loader: async () => {
-                    const res = await fetch('/categories.json');
+                    const res = await fetch('../categories.json');
                     return (await res.json());
                 },
                 children: [
@@ -23,7 +22,16 @@ const routes = createBrowserRouter([
                         path: '/',
                         element: <Products></Products>,
                         loader: async () => {
-                                    const res = await fetch('/data.json');
+                                    const res = await fetch('../data.json');
+                                    const data = await res.json();
+                                    return data;
+                                },
+                    },
+                    {
+                        path: '/category/:category',
+                        element: <Products></Products>,
+                        loader: async () => {
+                                    const res = await fetch('../data.json');
                                     const data = await res.json();
                                     return data;
                                 },
