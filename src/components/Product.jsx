@@ -1,5 +1,7 @@
+import { NavLink } from "react-router-dom";
+
 const Product = ({ product }) => {
-  const { id, image, name, price } = product;
+  const { id, image, name, price, category } = product;
 
   return (
     <div>
@@ -19,7 +21,9 @@ const Product = ({ product }) => {
             Price: {price}
           </h3>
           <div className="card-actions justify-start">
-            <button className="btn btn-primary">View Details</button>
+            <NavLink
+            to={`/product/${id}`}
+            className="btn btn-primary">View Details</NavLink>
           </div>
         </div>
       </div>

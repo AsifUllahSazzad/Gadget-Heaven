@@ -5,9 +5,9 @@ import { FaRegHeart } from "react-icons/fa";
 const Navbar = () => {
 
     const links = <>
-            <NavLink className={'text-[rgba(11,11,11,0.7)]'}><li>Home</li></NavLink>
-            <NavLink className={'text-[rgba(11,11,11,0.7)]'}><li>Statistics</li></NavLink>
-            <NavLink className={'text-[rgba(11,11,11,0.7)]'}><li>Dashboard</li></NavLink>
+            <NavLink to='/' className={'text-[rgba(11,11,11,0.7)]'}><li>Home</li></NavLink>
+            <NavLink to='/statistics' className={'text-[rgba(11,11,11,0.7)]'}><li>Statistics</li></NavLink>
+            <NavLink to='/dashboard' className={'text-[rgba(11,11,11,0.7)]'}><li>Dashboard</li></NavLink>
     </>
 
   return ( 
@@ -38,7 +38,7 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">Gadget Heaven</a>
+          <NavLink to='/' className="btn btn-ghost text-xl">Gadget Heaven</NavLink>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 space-x-8">

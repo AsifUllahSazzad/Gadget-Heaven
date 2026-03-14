@@ -3,7 +3,7 @@ import HeroImage from "../assets/banner.jpg";
 
 const Banner = ({ title, subtitle }) => {
   return (
-    <div className="bg-[#9548e2] rounded-2xl p-2">
+    <div className="bg-[#9548e2] rounded-2xl p-2 m-5">
       <div className="container mx-auto h-120 space-y-6">
         
         {/* Navbar */}

@@ -9,13 +9,7 @@ const Home = () => {
 
 
     return (
-        <div className='m-5'>
-            {/* Banner */}
-            <Banner
-            title={'Upgrade Your Tech Accessorize with Gadget Heaven Accessories'}
-            subtitle={'Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!'}
-            ></Banner>
-
+        <div>
             {/* Category and Data */}
             <div className='container mx-auto mt-130'>
            
