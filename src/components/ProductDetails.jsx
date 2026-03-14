@@ -35,18 +35,15 @@ const ProductDetails = () => {
 
                 <div className="container mx-auto">
                    
-                   <div className="card card-side bg-base-100 shadow-sm">
+        <div className="card card-side bg-base-100 shadow-sm grid grid-cols-[1fr_1fr]! p-5 gap-x-8">
         
-        <div className="p-5">
             <figure className="bg-gray-100 p-5 rounded-xl">
             <img
-            className=""
             src={image}
             alt={name} />
         </figure>
-        </div>
 
-  <div className="">
+  <div className="space-y-3">
     <h2 className="card-title text-3xl">{name}</h2>
     <p className="font-semibold text-[rgba(9,8,15,0.8)]">Price: ${price}</p>
     <button className="text-lime-600 p-2 px-4 border rounded-4xl bg-gray-100 font-medium">{stock_status}</button>
@@ -84,7 +81,10 @@ const ProductDetails = () => {
     <div className="card-actions justify-start">
       <button className="btn btn-primary">Add To Card</button>
     </div>
+
   </div>
+
+
 </div>
 
                 </div>
