@@ -7,9 +7,8 @@ const MainLayouts = () => {
 
     const location = useLocation();
 
-    const isHome = location.pathname === '/';
 
-
+    const isHome = location.pathname === '/' || location.pathname.startsWith('/category');
 
     return (
         <div className='flex flex-col bg-[rgba(246,246,246,1)]'>

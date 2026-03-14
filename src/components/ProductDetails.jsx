@@ -1,6 +1,7 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import Heading from "./Heading";
 import { useEffect, useState } from "react";
+import starIcon from '../assets/star.png';
 
 const ProductDetails = () => {
 
@@ -59,7 +60,26 @@ const ProductDetails = () => {
        }
     </ol>
 
-    <p>Rating</p>
+    <p className="flex items-center text-lg font-bold gap-x-1">Rating <img className="size-6" src={starIcon} alt="Rating" /></p>
+
+    <div className="flex items-center gap-x-3">
+        <div className="rating">
+       {
+        [1,2,3,4,5].map((star) => (
+            <input
+            key={star}
+            type="radio"
+            name="rating"
+            className="mask mask-star-2 bg-orange-400"
+            aria-label={`${star} star`}
+            checked={star === Math.floor(rating)}
+            readOnly
+            />
+        ))
+    }
+    </div>
+    <p className="text-sm text-[rgba(9,8,15,0.8)] font-medium">{rating}</p>
+    </div>
 
     <div className="card-actions justify-start">
       <button className="btn btn-primary">Add To Card</button>
