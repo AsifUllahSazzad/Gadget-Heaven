@@ -11,14 +11,40 @@ const Products = () => {
     const [categoryData, setCategoryData] = useState([]);
 
     useEffect(() => {
-            if(category === 'iPhone'){
-                console.log(category)
+            let filterByCategory = [];
+
+
+            if(!category || category === 'All Product'){
+                setCategoryData(items);
             }
-            if(category){
-                const filterByCategory = [...items].filter((item) => item.category === category);
+            if(category === 'Laptops'){
+                filterByCategory = [...items].filter((item) => item.category === 'Laptop');
+
+                setCategoryData(filterByCategory);
+            }
+            if(category === 'Phones'){
+                filterByCategory = [...items].filter((item) => item.category === 'Phone');
+
+                setCategoryData(filterByCategory);
+            }
+            if(category === 'Smart Watches'){
+                filterByCategory = [...items].filter((item) => item.category === 'Smart Watch');
+
+                setCategoryData(filterByCategory);
+            }
+            if(category === 'MacBook'){
+                filterByCategory = [...items].filter((item) => item.name.includes('MacBook'));
                 
                 setCategoryData(filterByCategory);
             }
+            if(category === 'iPhone'){
+                filterByCategory = [...items].filter((item) => item.name.includes('iPhone'));
+
+                setCategoryData(filterByCategory);
+            }
+            // else{
+                
+            // }
     }, [items, category])
 
 
