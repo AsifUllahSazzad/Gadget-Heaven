@@ -5,41 +5,39 @@ import { useEffect, useState } from "react";
 import Cart from "../components/Cart";
 
 const Dashboard = () => {
-  const [isCartOrWishlist, setIsCartOrWishlist] = useState('cart');
+  const [isCartOrWishlist, setIsCartOrWishlist] = useState("cart");
 
   const [carts, setCarts] = useState(getStoredData());
-  
-  
+
   const handleTheCart = () => {
-    setIsCartOrWishlist('cart');
+    setIsCartOrWishlist("cart");
   };
-  
-  
-  
+
   const handleWishlist = () => {
-    setIsCartOrWishlist('wishlist');
+    setIsCartOrWishlist("wishlist");
   };
-  
-  const handleRemove = (id) =>{
+
+  const handleRemove = (id) => {
     removeData(id);
-    
+
     const remainingData = getStoredData();
-    
-    setCarts(remainingData)
-  }
+
+    setCarts(remainingData);
+  };
 
   const [totalPrice, setTotalPrice] = useState(0);
 
   useEffect(() => {
     const totalPrice = carts.reduce((total, item) => total + item.price, 0);
 
-    setTotalPrice(totalPrice)
-  }, [carts])
+    setTotalPrice(totalPrice);
+  }, [carts]);
 
-  const handleSortByPrice = () =>{
-    
-  }
+  const handleSortByPrice = () => {
+    const sortByPrice = [...carts].sort((a, b) => b.price - a.price);
 
+    setCarts(sortByPrice);
+  };
 
   return (
     <div>
@@ -55,13 +53,13 @@ const Dashboard = () => {
         <div className="flex justify-center items-center gap-x-5 pb-5">
           <button
             onClick={handleTheCart}
-            className={`btn rounded-3xl text-lg px-10 py-5 ${isCartOrWishlist==='cart' ? 'bg-white font-extrabold text-[rgba(149,56,226,1)]' : 'text-white border-white bg-[rgba(149,56,226,1)] font-medium'}`}
+            className={`btn rounded-3xl text-lg px-10 py-5 ${isCartOrWishlist === "cart" ? "bg-white font-extrabold text-[rgba(149,56,226,1)]" : "text-white border-white bg-[rgba(149,56,226,1)] font-medium"}`}
           >
             Cart
           </button>
           <button
             onClick={handleWishlist}
-            className={` btn rounded-3xl px-10 text-lg py-5  ${isCartOrWishlist==='wishlist' ? 'bg-white font-extrabold text-[rgba(149,56,226,1)]' : 'text-white border-white bg-[rgba(149,56,226,1)] font-medium'}`}
+            className={` btn rounded-3xl px-10 text-lg py-5  ${isCartOrWishlist === "wishlist" ? "bg-white font-extrabold text-[rgba(149,56,226,1)]" : "text-white border-white bg-[rgba(149,56,226,1)] font-medium"}`}
           >
             Wishlist
           </button>
@@ -70,43 +68,31 @@ const Dashboard = () => {
 
       <div className="container mx-auto py-10">
         <div className="flex justify-between items-center">
-          <h1 className="text-2xl font-bold">{isCartOrWishlist === 'cart' ? 'Cart' : 'WishList'}</h1>
+          <h1 className="text-2xl font-bold">
+            {isCartOrWishlist === "cart" ? "Cart" : "WishList"}
+          </h1>
 
-          {
-            isCartOrWishlist === 'cart' ? (
-                <div className="flex items-center gap-x-5">
-            <h1 className="text-2xl font-bold">Total cost: {totalPrice}</h1>
+          {isCartOrWishlist === "cart" ? (
+            <div className="flex items-center gap-x-5">
+              <h1 className="text-2xl font-bold">Total cost: {totalPrice}</h1>
 
-            <button
-            onClick={handleSortByPrice}
-            className="btn btn-primary">
-              Sort by Price <FaSortNumericUpAlt />
-            </button>
+              <button onClick={handleSortByPrice} className="btn btn-primary">
+                Sort by Price <FaSortNumericUpAlt />
+              </button>
 
-            <button className="btn btn-primary">Purchase</button>
-          </div>
-            )
-            :
-            null
-          }
+              <button className="btn btn-primary">Purchase</button>
+            </div>
+          ) : null}
         </div>
       </div>
 
-      {
-        isCartOrWishlist === 'cart' ? (
-            <div className="container mx-auto">
-        {carts.map((cart, index) => (
-          <Cart
-          handleRemove={handleRemove}
-          key={index} cart={cart}></Cart>
-        ))}
-      </div>
-        )
-        :
-        (
-            null
-        )
-      }
+      {isCartOrWishlist === "cart" ? (
+        <div className="container mx-auto">
+          {carts.map((cart, index) => (
+            <Cart handleRemove={handleRemove} key={index} cart={cart}></Cart>
+          ))}
+        </div>
+      ) : null}
     </div>
   );
 };
