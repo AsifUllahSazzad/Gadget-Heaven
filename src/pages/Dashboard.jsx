@@ -3,25 +3,29 @@ import { FaSortNumericUpAlt } from "react-icons/fa";
 import { getStoredData, removeData } from "../utilities";
 import { useEffect, useState } from "react";
 import Cart from "../components/Cart";
+import Wishlist from "../components/Wishlist";
 
 const Dashboard = () => {
   const [isCartOrWishlist, setIsCartOrWishlist] = useState("cart");
 
   const [carts, setCarts] = useState(getStoredData('cart'));
 
+  const [wishlists, setWishlists] = useState(getStoredData('wishlist'));
+
 
   const handleTheCart = () => {
     setIsCartOrWishlist("cart");
   };
 
+  
   const handleWishlist = () => {
     setIsCartOrWishlist("wishlist");
   };
 
   const handleRemove = (id) => {
-    removeData(id, 'cart');
+    removeData(id, isCartOrWishlist === 'cart' ? 'cart' : 'wishlist');
 
-    const remainingData = getStoredData('cart');
+    const remainingData = getStoredData(isCartOrWishlist === 'cart' ? 'cart' : 'wishlist');
 
     setCarts(remainingData);
   };
@@ -41,6 +45,7 @@ const Dashboard = () => {
 
     setCarts(sortByPrice);
   };
+
 
   return (
     <div>
@@ -95,7 +100,20 @@ const Dashboard = () => {
             <Cart handleRemove={handleRemove} key={index} cart={cart}></Cart>
           ))}
         </div>
-      ) : null}
+      )
+      :
+      (
+         <div className="container mx-auto">
+         {
+          wishlists.map((wishlist,index) => <Wishlist
+          key={index}
+          wishlist={wishlist}
+          handleRemove={handleRemove}
+          ></Wishlist>)
+         }
+        </div>
+      )
+      }
     </div>
   );
 };

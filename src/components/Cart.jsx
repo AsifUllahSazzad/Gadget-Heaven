@@ -2,8 +2,6 @@ import { CiCircleRemove } from "react-icons/ci";
 
 const Cart = ({cart, handleRemove}) => {
 
-    if(!cart) return null;
-    console.log(cart)
 
     const {id, image, name, description, price} = cart;
 
