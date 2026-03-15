@@ -39,7 +39,7 @@ const ProductDetails = () => {
 
 
                    {/* Box  */}
-        <div className="card card-side bg-base-100 shadow-sm grid grid-cols-[1fr_1fr]! p-8 gap-x-8">
+        <div className="card card-side bg-base-100 shadow-sm grid grid-cols-[1fr_1fr]! p-8 gap-x-8 rounded-2xl items-center">
         
             <figure className="bg-gray-100 p-5 rounded-xl h-120">
             <img
@@ -56,7 +56,7 @@ const ProductDetails = () => {
 
     <p className="text-lg text-[rgba(9,8,15,0.6)]">{description}</p>
 
-    <ol className="list-decimal list-inside text-[rgba(9,8,15,0.6)] text-lg">
+    <ol className="list-decimal list-inside text-lg">
         <h5 className="text-lg font-bold">Specification:</h5>
        {
            specification && Object.entries(specification).map(([key, value]) => <li key={key}>{value}</li>)

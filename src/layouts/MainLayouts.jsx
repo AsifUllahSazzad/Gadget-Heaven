@@ -11,8 +11,8 @@ const MainLayouts = () => {
     const isHome = location.pathname === '/' || location.pathname.startsWith('/category');
 
     return (
-        <div className='flex flex-col bg-[rgba(246,246,246,1)]'>
-
+        <div>
+            <div className='flex flex-col bg-[rgba(246,246,246,1)]'>
             {/* Navbar */}
 
             {
@@ -22,16 +22,20 @@ const MainLayouts = () => {
             subtitle={'Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!'}
             ></Banner>)
             :
-            (<div className='container mx-auto'>
-                <Navbar></Navbar>
+            (<div className='bg-base-100'>
+                <div className='container mx-auto'>
+                    <Navbar></Navbar>
+                </div>
             </div>)
 
             }
 
             {/* Components */}
-            <main className='grow min-h-screen'>
+            <main className='grow min-h-screen mb-20'>
                 <Outlet></Outlet>
             </main>
+
+        </div>
 
             {/* Footer */}
             <Footer

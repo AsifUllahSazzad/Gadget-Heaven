@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 
 const Product = ({ product }) => {
-  const { id, image, name, price, category } = product;
+  const { id, image, name, price } = product;
 
   return (
     <div>

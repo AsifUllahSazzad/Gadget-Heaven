@@ -1,6 +1,4 @@
 import { Outlet, useLoaderData } from 'react-router-dom';
-import Banner from '../components/Banner';
-import Products from '../components/Products';
 import SideCategory from '../components/SideCategory';
 
 const Home = () => {
@@ -11,7 +9,7 @@ const Home = () => {
     return (
         <div>
             {/* Category and Data */}
-            <div className='container mx-auto mt-130'>
+            <div className='container mx-auto mt-105'>
            
                 <div className='flex'>
                     {/* Side Category */}
