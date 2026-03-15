@@ -13,21 +13,29 @@ const ProductDetails = () => {
     const {id} = useParams();
 
 
-    const [singleProduct, setSingleProduct] = useState([]);
+    const [singleProduct, setSingleProduct] = useState({});
 
     useEffect(() => {
         const findData = [...data].find((d) => d.id === parseInt(id));
 
         setSingleProduct(findData);
-    }, [data, id])
 
+    }, [data, id])
+    
 
     const {image, name, price, stock_status, description, rating, specification} = singleProduct;
 
     const handleAddToCard = (id) =>{
-        const findData = [...data].find((d) => d.id === parseInt(id));
+        const findData = data.find((d) => d.id === id);
+
+        addData(findData, 'cart')
         
-        addData(findData)
+    }
+
+    const handleTheWishlist = (id) =>{
+        const findData = data.find((d) => d.id === id);
+
+        addData(findData, 'wishlist');
     }
 
 
@@ -91,8 +99,10 @@ const ProductDetails = () => {
     </div>
 
     <div className="card-actions justify-start items-center gap-x-4">
-      <button onClick={() => handleAddToCard(id)} className="text-white btn bg-[rgba(149,56,226,1)]">Add To Card <BsCart3 className="text-xl"/></button>
-      <a className="btn btn-circle bg-white"><FaRegHeart /></a>
+      <button onClick={() => handleAddToCard(singleProduct.id)} className="text-white btn bg-[rgba(149,56,226,1)]">Add To Card <BsCart3 className="text-xl"/></button>
+      <button
+      onClick={() => handleTheWishlist(singleProduct.id)}
+      className="btn btn-circle bg-white"><FaRegHeart /></button>
     </div>
 
   </div>

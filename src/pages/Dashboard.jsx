@@ -7,7 +7,8 @@ import Cart from "../components/Cart";
 const Dashboard = () => {
   const [isCartOrWishlist, setIsCartOrWishlist] = useState("cart");
 
-  const [carts, setCarts] = useState(getStoredData());
+  const [carts, setCarts] = useState(getStoredData('cart'));
+
 
   const handleTheCart = () => {
     setIsCartOrWishlist("cart");
@@ -18,9 +19,9 @@ const Dashboard = () => {
   };
 
   const handleRemove = (id) => {
-    removeData(id);
+    removeData(id, 'cart');
 
-    const remainingData = getStoredData();
+    const remainingData = getStoredData('cart');
 
     setCarts(remainingData);
   };
@@ -28,8 +29,10 @@ const Dashboard = () => {
   const [totalPrice, setTotalPrice] = useState(0);
 
   useEffect(() => {
-    const totalPrice = carts.reduce((total, item) => total + item.price, 0);
-
+    const totalPrice = carts.reduce(
+  (total, item) => total + (item?.price || 0),
+  0
+);
     setTotalPrice(totalPrice);
   }, [carts]);
 

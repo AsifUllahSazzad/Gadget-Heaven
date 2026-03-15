@@ -1,6 +1,8 @@
+// Add to Card
 // Old data save:
-const getStoredData = () =>{
-    const storeData = localStorage.getItem('Cart');
+const getStoredData = (type) =>{
+    const storeData = localStorage.getItem(type);
+
 
     if(storeData){
         return JSON.parse(storeData);
@@ -9,20 +11,23 @@ const getStoredData = () =>{
 }
 
 // Add a product to local storage
-const addData = (value) =>{
-    const localSt = getStoredData();
+const addData = (value, type) =>{
+
+    if(!value) return;
+
+    const localSt = getStoredData(type);
 
         localSt.push(value);
     
         const localStorageSave = JSON.stringify(localSt);
     
-        localStorage.setItem('Cart', localStorageSave);
+        localStorage.setItem(type, localStorageSave);
 
-    }
+}
 
 // Remove product from local storage
-    const removeData = (id) =>{
-        const getData = getStoredData();
+    const removeData = (id, type) =>{
+        const getData = getStoredData(type);
         
         const index = getData.findIndex((data) => data.id === id)
 
@@ -30,7 +35,7 @@ const addData = (value) =>{
             getData.splice(index, 1);
         }
     
-        localStorage.setItem('Cart', JSON.stringify(getData));
+        localStorage.setItem(type, JSON.stringify(getData));
     }
 
 export {addData, getStoredData, removeData};
