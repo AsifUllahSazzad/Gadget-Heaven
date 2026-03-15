@@ -2,6 +2,8 @@ import { useLoaderData, useParams } from "react-router-dom";
 import Heading from "./Heading";
 import { useEffect, useState } from "react";
 import starIcon from '../assets/star.png';
+import { BsCart3 } from "react-icons/bs";
+import { FaRegHeart } from "react-icons/fa";
 
 const ProductDetails = () => {
 
@@ -34,24 +36,28 @@ const ProductDetails = () => {
                 ></Heading>
 
                 <div className="container mx-auto">
-                   
-        <div className="card card-side bg-base-100 shadow-sm grid grid-cols-[1fr_1fr]! p-5 gap-x-8">
+
+
+                   {/* Box  */}
+        <div className="card card-side bg-base-100 shadow-sm grid grid-cols-[1fr_1fr]! p-8 gap-x-8">
         
-            <figure className="bg-gray-100 p-5 rounded-xl">
+            <figure className="bg-gray-100 p-5 rounded-xl h-120">
             <img
+            className="h-full object-contain"
             src={image}
-            alt={name} />
+            alt={name} 
+            />
         </figure>
 
-  <div className="space-y-3">
+  <div className="space-y-5">
     <h2 className="card-title text-3xl">{name}</h2>
     <p className="font-semibold text-[rgba(9,8,15,0.8)]">Price: ${price}</p>
     <button className="text-lime-600 p-2 px-4 border rounded-4xl bg-gray-100 font-medium">{stock_status}</button>
 
     <p className="text-lg text-[rgba(9,8,15,0.6)]">{description}</p>
 
-        <h5 className="text-lg font-bold">Specification:</h5>
     <ol className="list-decimal list-inside text-[rgba(9,8,15,0.6)] text-lg">
+        <h5 className="text-lg font-bold">Specification:</h5>
        {
            specification && Object.entries(specification).map(([key, value]) => <li key={key}>{value}</li>)
        }
@@ -78,8 +84,9 @@ const ProductDetails = () => {
     <p className="text-sm text-[rgba(9,8,15,0.8)] font-medium">{rating}</p>
     </div>
 
-    <div className="card-actions justify-start">
-      <button className="btn btn-primary">Add To Card</button>
+    <div className="card-actions justify-start items-center gap-x-4">
+      <button className="text-white btn bg-[rgba(149,56,226,1)]">Add To Card <BsCart3 className="text-xl"/></button>
+      <a className="btn btn-circle bg-white"><FaRegHeart /></a>
     </div>
 
   </div>
