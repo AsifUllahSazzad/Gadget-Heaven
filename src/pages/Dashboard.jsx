@@ -1,7 +1,7 @@
 import Heading from "../components/Heading";
 import { FaSortNumericUpAlt } from "react-icons/fa";
 import { getStoredData, removeData } from "../utilities";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Cart from "../components/Cart";
 
 const Dashboard = () => {
@@ -14,21 +14,32 @@ const Dashboard = () => {
     setIsCartOrWishlist('cart');
   };
   
-
-
+  
+  
   const handleWishlist = () => {
     setIsCartOrWishlist('wishlist');
   };
+  
+  const handleRemove = (id) =>{
+    removeData(id);
+    
+    const remainingData = getStoredData();
+    
+    setCarts(remainingData)
+  }
 
-    const handleRemove = (id) =>{
-        removeData(id);
+  const [totalPrice, setTotalPrice] = useState(0);
 
-        const remainingData = getStoredData();
+  useEffect(() => {
+    const totalPrice = carts.reduce((total, item) => total + item.price, 0);
 
-        setCarts(remainingData)
-    }
+    setTotalPrice(totalPrice)
+  }, [carts])
 
-    const [totalPrice, setTotalPrice] = useState(0);
+  const handleSortByPrice = () =>{
+    
+  }
+
 
   return (
     <div>
@@ -66,7 +77,9 @@ const Dashboard = () => {
                 <div className="flex items-center gap-x-5">
             <h1 className="text-2xl font-bold">Total cost: {totalPrice}</h1>
 
-            <button className="btn btn-primary">
+            <button
+            onClick={handleSortByPrice}
+            className="btn btn-primary">
               Sort by Price <FaSortNumericUpAlt />
             </button>
 
@@ -83,7 +96,7 @@ const Dashboard = () => {
         isCartOrWishlist === 'cart' ? (
             <div className="container mx-auto">
         {carts.map((cart, index) => (
-          <Cart 
+          <Cart
           handleRemove={handleRemove}
           key={index} cart={cart}></Cart>
         ))}

@@ -6,6 +6,7 @@ import { BsCart3 } from "react-icons/bs";
 import { FaRegHeart } from "react-icons/fa";
 import { addData } from "../utilities";
 
+
 const ProductDetails = () => {
 
     const data = useLoaderData();
@@ -27,8 +28,6 @@ const ProductDetails = () => {
         const findData = [...data].find((d) => d.id === parseInt(id));
         
         addData(findData)
-
-       
     }
 
 
