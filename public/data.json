@@ -26,7 +26,7 @@
       "processor": "Snapdragon 8 Gen 3",
       "storage": "256GB"
     },
-    "rating": 4.6,
+    "rating": 3.6,
     "image": "https://i.ibb.co/xt6Lm5wJ/samsung-galaxy-s24-5g-sm-s921-1-removebg-preview.png",
     "category": "Phone"
   },
@@ -72,7 +72,7 @@
       "processor": "Intel Core i7",
       "ram": "16GB"
     },
-    "rating": 4.7,
+    "rating": 2.7,
     "image": "https://i.ibb.co/nMffkMv9/xps-13-9345-laptop-silver-copilot-pc-mg-removebg-preview.png",
     "category": "Laptop"
   },
@@ -117,7 +117,7 @@
       "processor": "Apple M1",
       "storage": "256GB"
     },
-    "rating": 4.6,
+    "rating": 5,
     "image": "https://i.ibb.co/HJFF42t/4973-48920-removebg-preview.png",
     "category": "Tablet"
   },
@@ -132,7 +132,7 @@
       "processor": "Snapdragon 8 Gen 2",
       "storage": "256GB"
     },
-    "rating": 4.7,
+    "rating": 2.7,
     "image": "https://i.ibb.co/JFmT4dFP/Galaxy-Tab-S9-Graphite-3477-removebg-preview.png",
     "category": "Tablet"
   },
@@ -175,7 +175,7 @@
       "display": "AMOLED",
       "battery": "40 hours"
     },
-    "rating": 4.7,
+    "rating": 1.7,
     "image": "https://i.ibb.co/CKzTFFYg/Galaxy-Watch6-Classic-Silver-6323-removebg-preview.png",
     "category": "Smart Watch"
   },
@@ -203,7 +203,7 @@
       "display": "AMOLED",
       "battery": "6 days"
     },
-    "rating": 4.4,
+    "rating": 5,
     "image": "https://i.ibb.co/mVZkHx1r/61-CZSo-Sn-VPL-AC-SL1500-removebg.png",
     "category": "Smart Watch"
   }
