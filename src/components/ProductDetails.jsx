@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import starIcon from '../assets/star.png';
 import { BsCart3 } from "react-icons/bs";
 import { FaRegHeart } from "react-icons/fa";
+import { addData } from "../utilities";
 
 const ProductDetails = () => {
 
@@ -22,7 +23,13 @@ const ProductDetails = () => {
 
     const {image, name, price, stock_status, description, rating, specification} = singleProduct;
 
+    const handleAddToCard = (id) =>{
+        const findData = [...data].find((d) => d.id === parseInt(id));
+        
+        addData(findData)
 
+       
+    }
 
 
     return (
@@ -85,7 +92,7 @@ const ProductDetails = () => {
     </div>
 
     <div className="card-actions justify-start items-center gap-x-4">
-      <button className="text-white btn bg-[rgba(149,56,226,1)]">Add To Card <BsCart3 className="text-xl"/></button>
+      <button onClick={() => handleAddToCard(id)} className="text-white btn bg-[rgba(149,56,226,1)]">Add To Card <BsCart3 className="text-xl"/></button>
       <a className="btn btn-circle bg-white"><FaRegHeart /></a>
     </div>
 
