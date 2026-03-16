@@ -1,5 +1,6 @@
 import { Outlet, useLoaderData } from 'react-router-dom';
 import SideCategory from '../components/SideCategory';
+import { Helmet } from 'react-helmet-async';
 
 const Home = () => {
 
@@ -8,6 +9,11 @@ const Home = () => {
 
     return (
         <div>
+            {/* Dynamic Titles */}
+                  <Helmet>
+                    <title>Home</title>
+                  </Helmet>
+
             {/* Category and Data */}
             <div className='container mx-auto mt-105'>
            

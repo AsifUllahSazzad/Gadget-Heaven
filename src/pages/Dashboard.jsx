@@ -7,6 +7,7 @@ import Wishlist from "../components/Wishlist";
 import toast from "react-hot-toast";
 import GroupImage from '../assets/Group.png'
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const Dashboard = () => {
   const [isCartOrWishlist, setIsCartOrWishlist] = useState("cart");
@@ -93,6 +94,12 @@ const Dashboard = () => {
 
   return (
     <div>
+      {/* Dynamic Titles */}
+      <Helmet>
+        <title>Dashboard</title>
+      </Helmet>
+      
+      {/* Content */}
       <div className="bg-[rgba(149,56,226,1)]">
         {/* Heading */}
         <Heading

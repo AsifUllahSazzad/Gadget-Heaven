@@ -2,6 +2,7 @@ import Heading from '../components/Heading';
 import { ComposedChart, Line, Area, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 import { RechartsDevtools } from '@recharts/devtools';
 import { useLoaderData } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const Statistics = () => {
 
@@ -10,6 +11,12 @@ const Statistics = () => {
 
     return (
         <div>
+            {/* Dynamic Titles */}
+                  <Helmet>
+                    <title>Statistics</title>
+                  </Helmet>
+
+
             {/* Heading */}
             <div className='bg-[rgba(149,56,226,1)]'>
                 <Heading
