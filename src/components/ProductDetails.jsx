@@ -5,6 +5,7 @@ import starIcon from '../assets/star.png';
 import { BsCart3 } from "react-icons/bs";
 import { FaRegHeart } from "react-icons/fa";
 import { addData, getStoredData } from "../utilities";
+import toast from "react-hot-toast";
 
 
 const ProductDetails = () => {
@@ -44,6 +45,8 @@ const ProductDetails = () => {
         const findData = data.find((d) => d.id === id);
 
         addData(findData, 'cart')
+
+        toast.success('Added to your cart! 🛒');
     }
 
 
@@ -53,6 +56,8 @@ const ProductDetails = () => {
         addData(findData, 'wishlist');
 
         setIsWishlist(true)
+
+        toast.success('Added to your wishlist! ❤️');
     }
 
 

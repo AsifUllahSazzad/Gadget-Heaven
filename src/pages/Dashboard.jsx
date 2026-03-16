@@ -4,6 +4,7 @@ import { addData, getStoredData, removeData } from "../utilities";
 import { useEffect, useState } from "react";
 import Cart from "../components/Cart";
 import Wishlist from "../components/Wishlist";
+import toast from "react-hot-toast";
 
 const Dashboard = () => {
   const [isCartOrWishlist, setIsCartOrWishlist] = useState("cart");
@@ -56,6 +57,9 @@ const Dashboard = () => {
         addData(wishlist, 'cart');
 
         setCarts(getStoredData('cart'))
+
+        toast.success('Added to your cart! 🛒');
+
     }
 
 

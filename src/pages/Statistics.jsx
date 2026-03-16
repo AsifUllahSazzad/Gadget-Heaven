@@ -24,7 +24,7 @@ const Statistics = () => {
 
 
 
-<div className='mt-5 bg-white'>
+<div className='mt-5 bg-white rounded-2xl'>
 
 
             <ComposedChart
