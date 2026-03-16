@@ -6,6 +6,7 @@ import Cart from "../components/Cart";
 import Wishlist from "../components/Wishlist";
 import toast from "react-hot-toast";
 import GroupImage from '../assets/Group.png'
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
   const [isCartOrWishlist, setIsCartOrWishlist] = useState("cart");
@@ -14,6 +15,19 @@ const Dashboard = () => {
 
   const [wishlists, setWishlists] = useState(getStoredData('wishlist'));
 
+  const [purchaseBtn, setPurchaseBtn] = useState(true);
+
+  useEffect(() => {
+      const cartData = getStoredData('cart');
+
+      if(cartData.length){
+        setPurchaseBtn(false)
+      }
+      else{
+        setPurchaseBtn(true)
+      }
+      
+  }, [carts, purchaseBtn])
 
   const handleTheCart = () => {
     setIsCartOrWishlist("cart");
@@ -67,9 +81,13 @@ const Dashboard = () => {
       document.getElementById('my_modal_5').showModal();
     }
 
+    const navigate = useNavigate();
+
     const handleCloseBtn = () =>{
       localStorage.removeItem('cart');
       setCarts([]);
+
+      navigate('/');
     }
 
 
@@ -115,6 +133,7 @@ const Dashboard = () => {
               </button>
 
               <button
+              disabled={purchaseBtn}
               onClick={handleThePurchase}
               className="btn btn-primary">Purchase</button>
 
