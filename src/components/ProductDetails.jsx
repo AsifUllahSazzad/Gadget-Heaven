@@ -6,6 +6,7 @@ import { BsCart3 } from "react-icons/bs";
 import { FaRegHeart } from "react-icons/fa";
 import { addData, getStoredData } from "../utilities";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 
 
 const ProductDetails = () => {
@@ -63,6 +64,10 @@ const ProductDetails = () => {
 
     return (
         <div>
+
+            <Helmet>
+                <title>Product Details</title>
+            </Helmet>
 
             {/* Heading */}
            <div className="bg-[rgba(149,56,226,1)] h-80">

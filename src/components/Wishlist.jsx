@@ -1,6 +1,5 @@
 import { Helmet } from "react-helmet-async";
 import { CiCircleRemove } from "react-icons/ci";
-import { useLocation } from "react-router-dom";
 
 const Wishlist = ({wishlist, handleRemove, handleAddToCard}) => {
 
@@ -33,12 +32,6 @@ const Wishlist = ({wishlist, handleRemove, handleAddToCard}) => {
              <button
              onClick={() => handleRemove(id)}
              ><CiCircleRemove className="text-red-500 size-10 cursor-pointer" /></button>
-
-
-             <Helmet>
-                <title>Dashboard || WishList</title>
-                <link rel="canonical" href="/dashboard#wishlist" />
-             </Helmet>
             </div>
     );
 };

@@ -35,8 +35,8 @@ const Cart = ({cart, handleRemove}) => {
      {/* Dynamic Titles */}
     <Helmet>
         <title>Dashboard || Cart</title>
-        <link rel="canonical" href="/dashboard#cart" />
     </Helmet>
+    
     </div>
     );
 };
