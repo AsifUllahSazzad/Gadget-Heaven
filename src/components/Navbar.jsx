@@ -46,8 +46,8 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end space-x-3">
-          <a className="btn btn-circle bg-white"><BsCart3/></a>
-          <a className="btn btn-circle bg-white"><FaRegHeart /></a>
+          <NavLink to={'/dashboard#cart'} className="btn btn-circle bg-white"><BsCart3/></NavLink>
+          <NavLink to={'/dashboard#wishlist'} className="btn btn-circle bg-white"><FaRegHeart /></NavLink>
         </div>
       </div>
   );

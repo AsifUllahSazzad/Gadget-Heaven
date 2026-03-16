@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { CiCircleRemove } from "react-icons/ci";
 
 const Cart = ({cart, handleRemove}) => {
@@ -8,7 +9,7 @@ const Cart = ({cart, handleRemove}) => {
 
     return (
 
-    <div className="flex justify-between p-5 rounded-xl bg-white items-center mb-6">
+    <div id="cart" className="flex justify-between p-5 rounded-xl bg-white items-center mb-6">
 
         <div className="flex gap-5 items-center">
              <img className="w-38  rounded-lg object-contain shrink-0"
@@ -30,6 +31,12 @@ const Cart = ({cart, handleRemove}) => {
      <button
      onClick={() => handleRemove(id)}
      ><CiCircleRemove className="text-red-500 size-10 cursor-pointer" /></button>
+
+     {/* Dynamic Titles */}
+    <Helmet>
+        <title>Dashboard || Cart</title>
+        <link rel="canonical" href="/dashboard#cart" />
+    </Helmet>
     </div>
     );
 };

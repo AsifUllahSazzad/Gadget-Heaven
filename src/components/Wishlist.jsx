@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { CiCircleRemove } from "react-icons/ci";
 import { useLocation } from "react-router-dom";
 
@@ -5,7 +6,7 @@ const Wishlist = ({wishlist, handleRemove, handleAddToCard}) => {
 
     const {id, image, name, description, price} = wishlist;
     return (
-        <div className="flex justify-between p-5 rounded-xl bg-white items-center mb-6">
+        <div id="wishlist" className="flex justify-between p-5 rounded-xl bg-white items-center mb-6">
         
         <div className="flex gap-5 items-center">
                      <img className="w-38  rounded-lg object-contain shrink-0"
@@ -32,6 +33,12 @@ const Wishlist = ({wishlist, handleRemove, handleAddToCard}) => {
              <button
              onClick={() => handleRemove(id)}
              ><CiCircleRemove className="text-red-500 size-10 cursor-pointer" /></button>
+
+
+             <Helmet>
+                <title>Dashboard || WishList</title>
+                <link rel="canonical" href="/dashboard#wishlist" />
+             </Helmet>
             </div>
     );
 };

@@ -10,7 +10,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
 const Dashboard = () => {
-  const [isCartOrWishlist, setIsCartOrWishlist] = useState("cart");
+  const [isCartOrWishlist, setIsCartOrWishlist] = useState("");
 
   const [carts, setCarts] = useState(getStoredData('cart'));
 
@@ -33,25 +33,25 @@ const Dashboard = () => {
 
    const location = useLocation();
 
-    useEffect(() => {
-        if(location.hash === '#wishlist'){
-          
-          setIsCartOrWishlist("wishlist")
-        }
-        if(location.hash === 'cart' || location === '/dashboard'){
-          setIsCartOrWishlist('cart');
-        }
+   useEffect(() => {
+     if(location.hash === ''){
+       setIsCartOrWishlist('cart')
+      }
+      else if(location.hash === '#cart'){
+        setIsCartOrWishlist('cart')
+      }
+      else if(location.hash === '#wishlist'){
+        setIsCartOrWishlist('wishlist');
+      }   
+   } ,[location])
 
-    }, [isCartOrWishlist, location])
+   const navigate = useNavigate();
 
   const handleTheCart = () => {
     setIsCartOrWishlist("cart");
     navigate('#cart')
   };
 
-
-    const navigate = useNavigate();
-  
   const handleWishlist = () => {
     setIsCartOrWishlist("wishlist");
     navigate('#wishlist')
