@@ -50,6 +50,10 @@ const routes = createBrowserRouter([
       {
         path: "/statistics",
         element: <Statistics></Statistics>,
+        loader: async () => {
+          const res = await fetch("../data.json");
+          return await res.json();
+        },
       },
       {
         path: "/dashboard",
