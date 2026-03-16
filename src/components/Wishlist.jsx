@@ -1,9 +1,9 @@
 import { CiCircleRemove } from "react-icons/ci";
+import { useLocation } from "react-router-dom";
 
 const Wishlist = ({wishlist, handleRemove, handleAddToCard}) => {
 
     const {id, image, name, description, price} = wishlist;
-    
     return (
         <div className="flex justify-between p-5 rounded-xl bg-white items-center mb-6">
         

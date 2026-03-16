@@ -6,7 +6,7 @@ import Cart from "../components/Cart";
 import Wishlist from "../components/Wishlist";
 import toast from "react-hot-toast";
 import GroupImage from '../assets/Group.png'
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
 const Dashboard = () => {
@@ -30,13 +30,31 @@ const Dashboard = () => {
       
   }, [carts, purchaseBtn])
 
+
+   const location = useLocation();
+
+    useEffect(() => {
+        if(location.hash === '#wishlist'){
+          
+          setIsCartOrWishlist("wishlist")
+        }
+        if(location.hash === 'cart' || location === '/dashboard'){
+          setIsCartOrWishlist('cart');
+        }
+
+    }, [isCartOrWishlist, location])
+
   const handleTheCart = () => {
     setIsCartOrWishlist("cart");
+    navigate('#cart')
   };
 
+
+    const navigate = useNavigate();
   
   const handleWishlist = () => {
     setIsCartOrWishlist("wishlist");
+    navigate('#wishlist')
   };
 
   const handleRemove = (id) => {
@@ -82,7 +100,6 @@ const Dashboard = () => {
       document.getElementById('my_modal_5').showModal();
     }
 
-    const navigate = useNavigate();
 
     const handleCloseBtn = () =>{
       localStorage.removeItem('cart');
@@ -169,7 +186,7 @@ const Dashboard = () => {
       </div>
 
       {isCartOrWishlist === "cart" ? (
-        <div className="container mx-auto">
+        <div id="cart" className="container mx-auto">
           {carts.map((cart, index) => (
             <Cart handleRemove={handleRemove} key={index} cart={cart}></Cart>
           ))}
@@ -177,7 +194,7 @@ const Dashboard = () => {
       )
       :
       (
-         <div className="container mx-auto">
+         <div id="wishlist" className="container mx-auto">
          {
           wishlists.map((wishlist,index) => <Wishlist
           key={index}
