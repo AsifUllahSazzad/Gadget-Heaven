@@ -27,7 +27,13 @@ const Dashboard = () => {
 
     const remainingData = getStoredData(isCartOrWishlist === 'cart' ? 'cart' : 'wishlist');
 
-    setCarts(remainingData);
+    if(isCartOrWishlist === 'cart'){
+      setCarts(remainingData);
+    }
+    
+    if(isCartOrWishlist === 'wishlist'){
+      setWishlists(remainingData);
+    }
   };
 
   const [totalPrice, setTotalPrice] = useState(0);

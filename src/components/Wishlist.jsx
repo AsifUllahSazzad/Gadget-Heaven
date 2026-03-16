@@ -1,14 +1,14 @@
-import React from 'react';
+import { CiCircleRemove } from "react-icons/ci";
 
 const Wishlist = ({wishlist, handleRemove}) => {
 
-        const {id, image, name, description, price} = wishlist;
+    const {id, image, name, description, price} = wishlist;
 
     
     return (
         <div className="flex justify-between p-5 rounded-xl bg-white items-center mb-6">
         
-                <div className="flex gap-5 items-center">
+        <div className="flex gap-5 items-center">
                      <img className="w-38  rounded-lg object-contain shrink-0"
                 src={image} alt={name} />
         
@@ -17,13 +17,18 @@ const Wishlist = ({wishlist, handleRemove}) => {
                 {name}
                 </h3>
                 <p className="text-lg text-[rgba(9,8,15,0.6)]">
-                {description}
+                <span className="text-black">Description:</span> {description}
                 </p>
                 <p className="text-xl font-semibold text-[rgba(9,8,15,0.8)]">
                 Price: ${price}
                 </p>
+
+                <button 
+                onClick={}
+                className="btn w-40 rounded-2xl bg-[rgba(149,56,226,1)] text-white font-medium">Add to Card</button>
             </div>
-                </div>
+
+        </div>
         
              <button
              onClick={() => handleRemove(id)}

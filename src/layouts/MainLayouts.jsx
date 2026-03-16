@@ -2,6 +2,7 @@ import Footer from '../components/Footer';
 import { Outlet, useLocation } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Banner from '../components/Banner';
+import { Toaster } from 'react-hot-toast';
 
 const MainLayouts = () => {
 
@@ -12,6 +13,9 @@ const MainLayouts = () => {
 
     return (
         <div>
+            {/* Toast */}
+            <Toaster></Toaster>
+
             <div className='flex flex-col bg-[rgba(246,246,246,1)]'>
             {/* Navbar */}
 

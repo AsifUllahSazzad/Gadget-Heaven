@@ -1,4 +1,5 @@
-// Add to Card
+import toast from 'react-hot-toast';
+// Add to Card & Whishlist
 // Old data save:
 const getStoredData = (type) =>{
     const storeData = localStorage.getItem(type);
@@ -13,15 +14,30 @@ const getStoredData = (type) =>{
 // Add a product to local storage
 const addData = (value, type) =>{
 
-    if(!value) return;
-
     const localSt = getStoredData(type);
 
+    if(type === 'wishlist'){
+        const isExist = localSt.find((d) => d.id === value.id);
+
+        if(isExist){
+            toast.error('This item is already in your wishlist.');
+        }
+        else{
+            localSt.push(value);
+    
+            const localStorageSave = JSON.stringify(localSt);
+    
+            localStorage.setItem(type, localStorageSave);
+        }
+    }
+
+    if(type === 'cart'){
         localSt.push(value);
     
         const localStorageSave = JSON.stringify(localSt);
     
         localStorage.setItem(type, localStorageSave);
+    }
 
 }
 
