@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import starIcon from '../assets/star.png';
 import { BsCart3 } from "react-icons/bs";
 import { FaRegHeart } from "react-icons/fa";
-import { addData } from "../utilities";
+import { addData, getStoredData } from "../utilities";
 
 
 const ProductDetails = () => {
@@ -15,10 +15,25 @@ const ProductDetails = () => {
 
     const [singleProduct, setSingleProduct] = useState({});
 
+    const [isWishlist, setIsWishlist] = useState(false);
+    
     useEffect(() => {
+
+
         const findData = [...data].find((d) => d.id === parseInt(id));
 
+
         setSingleProduct(findData);
+
+
+        const wishlistData = getStoredData('wishlist');
+
+        const isExist = wishlistData.find((item) => item.id === findData.id);
+
+
+        if(isExist){
+            setIsWishlist(true);
+        }
 
     }, [data, id])
     
@@ -31,10 +46,13 @@ const ProductDetails = () => {
         addData(findData, 'cart')
     }
 
+
     const handleTheWishlist = (id) =>{
         const findData = data.find((d) => d.id === id);
 
         addData(findData, 'wishlist');
+
+        setIsWishlist(true)
     }
 
 
@@ -100,8 +118,9 @@ const ProductDetails = () => {
     <div className="card-actions justify-start items-center gap-x-4">
       <button onClick={() => handleAddToCard(singleProduct.id)} className="text-white btn bg-[rgba(149,56,226,1)]">Add To Card <BsCart3 className="text-xl"/></button>
       <button
+      disabled={isWishlist}
       onClick={() => handleTheWishlist(singleProduct.id)}
-      className="btn btn-circle bg-white"><FaRegHeart /></button>
+      className="btn btn-circle bg-white hover:bg-red-300"><FaRegHeart /></button>
     </div>
 
   </div>
