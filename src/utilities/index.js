@@ -1,4 +1,5 @@
 import toast from 'react-hot-toast';
+
 // Add to Card & Whishlist
 // Old data save:
 const getStoredData = (type) =>{

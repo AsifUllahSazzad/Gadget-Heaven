@@ -1,9 +1,8 @@
 import { CiCircleRemove } from "react-icons/ci";
 
-const Wishlist = ({wishlist, handleRemove}) => {
+const Wishlist = ({wishlist, handleRemove, handleAddToCard}) => {
 
     const {id, image, name, description, price} = wishlist;
-
     
     return (
         <div className="flex justify-between p-5 rounded-xl bg-white items-center mb-6">
@@ -24,7 +23,7 @@ const Wishlist = ({wishlist, handleRemove}) => {
                 </p>
 
                 <button 
-                onClick={}
+                onClick={() => handleAddToCard(wishlist)}
                 className="btn w-40 rounded-2xl bg-[rgba(149,56,226,1)] text-white font-medium">Add to Card</button>
             </div>
 

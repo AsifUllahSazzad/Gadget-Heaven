@@ -29,7 +29,6 @@ const ProductDetails = () => {
         const findData = data.find((d) => d.id === id);
 
         addData(findData, 'cart')
-        
     }
 
     const handleTheWishlist = (id) =>{

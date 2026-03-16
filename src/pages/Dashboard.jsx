@@ -1,6 +1,6 @@
 import Heading from "../components/Heading";
 import { FaSortNumericUpAlt } from "react-icons/fa";
-import { getStoredData, removeData } from "../utilities";
+import { addData, getStoredData, removeData } from "../utilities";
 import { useEffect, useState } from "react";
 import Cart from "../components/Cart";
 import Wishlist from "../components/Wishlist";
@@ -51,6 +51,12 @@ const Dashboard = () => {
 
     setCarts(sortByPrice);
   };
+
+    const handleAddToCard = (wishlist) =>{
+        addData(wishlist, 'cart');
+
+        setCarts(getStoredData('cart'))
+    }
 
 
   return (
@@ -115,6 +121,7 @@ const Dashboard = () => {
           key={index}
           wishlist={wishlist}
           handleRemove={handleRemove}
+          handleAddToCard={handleAddToCard}
           ></Wishlist>)
          }
         </div>
