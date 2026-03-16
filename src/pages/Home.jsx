@@ -2,9 +2,12 @@ import { Outlet, useLoaderData } from 'react-router-dom';
 import SideCategory from '../components/SideCategory';
 import { Helmet } from 'react-helmet-async';
 
+
 const Home = () => {
 
     const categories = useLoaderData();
+
+   
 
 
     return (
@@ -15,7 +18,7 @@ const Home = () => {
                   </Helmet>
 
             {/* Category and Data */}
-            <div className='container mx-auto mt-105'>
+                    <div className='container mx-auto mt-105'>
            
                 <div className='flex'>
                     {/* Side Category */}
@@ -26,7 +29,7 @@ const Home = () => {
                     <Outlet></Outlet>
                 </div>
 
-            </div>
+            </div>                
             
         </div>
     );

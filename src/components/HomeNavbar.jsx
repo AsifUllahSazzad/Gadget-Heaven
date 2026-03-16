@@ -1,6 +1,8 @@
 import { BsCart3 } from "react-icons/bs";
 import { NavLink } from "react-router-dom";
 import { FaRegHeart } from "react-icons/fa";
+import { useContext } from "react";
+import { AssetContext } from "../layouts/MainLayouts";
 
 const HomeNavbar = () => {
      const links = <>
@@ -8,6 +10,10 @@ const HomeNavbar = () => {
             <NavLink to='/statistics' className={'text-white'}><li>Statistics</li></NavLink>
             <NavLink to='/dashboard' className={'text-white'}><li>Dashboard</li></NavLink>
     </>
+
+    const {cartLength, wishlistLength} = useContext(AssetContext);
+
+    console.log(cartLength, wishlistLength)
 
   return (
       <div className="navbar text-white">
@@ -45,7 +51,7 @@ const HomeNavbar = () => {
           </ul>
         </div>
         <div className="navbar-end space-x-3">
-          <NavLink to='/dashboard#cart' className="btn btn-circle bg-white"><BsCart3/></NavLink>
+          <NavLink to='/dashboard#cart' className="btn btn-circle bg-white"><BsCart3/>{cartLength}</NavLink>
 
           <NavLink to='/dashboard#wishlist' className="btn btn-circle bg-white"><FaRegHeart /></NavLink>
         </div>

@@ -3,6 +3,11 @@ import { Outlet, useLocation } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Banner from '../components/Banner';
 import { Toaster } from 'react-hot-toast';
+import { getStoredData } from '../utilities';
+import { createContext } from 'react';
+
+
+const AssetContext = createContext([0,0]);
 
 const MainLayouts = () => {
 
@@ -11,10 +16,15 @@ const MainLayouts = () => {
 
     const isHome = location.pathname === '/' || location.pathname.startsWith('/category');
 
+     const cartLength = getStoredData('cart').length;
+    const wishlistLength = getStoredData('wishlist').length;
+
     return (
         <div>
             {/* Toast */}
             <Toaster></Toaster>
+
+            <AssetContext.Provider value={{cartLength, wishlistLength}}>
 
             <div className='flex flex-col bg-[rgba(246,246,246,1)]'>
             {/* Navbar */}
@@ -46,8 +56,11 @@ const MainLayouts = () => {
             title={'Gadget Heaven'}
             subtitle={'Leading the way in cutting-edge technology and innovation.'}
             ></Footer>
+
+            </AssetContext.Provider>
         </div>
     );
 };
 
 export default MainLayouts;
+export {AssetContext};
