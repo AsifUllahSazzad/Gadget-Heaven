@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import Cart from "../components/Cart";
 import Wishlist from "../components/Wishlist";
 import toast from "react-hot-toast";
+import GroupImage from '../assets/Group.png'
 
 const Dashboard = () => {
   const [isCartOrWishlist, setIsCartOrWishlist] = useState("cart");
@@ -62,6 +63,15 @@ const Dashboard = () => {
 
     }
 
+    const handleThePurchase = () =>{
+      document.getElementById('my_modal_5').showModal();
+    }
+
+    const handleCloseBtn = () =>{
+      localStorage.removeItem('cart');
+      setCarts([]);
+    }
+
 
   return (
     <div>
@@ -104,7 +114,29 @@ const Dashboard = () => {
                 Sort by Price <FaSortNumericUpAlt />
               </button>
 
-              <button className="btn btn-primary">Purchase</button>
+              <button
+              onClick={handleThePurchase}
+              className="btn btn-primary">Purchase</button>
+
+                {/* Modal */}
+              <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
+        <div className="modal-box flex flex-col justify-center items-center gap-y-3 w-1/3">
+          <img className="size-18" src={GroupImage} alt="Payment Image" />
+          <h3 className="font-bold text-2xl">Payment Successfully</h3>
+          <p className="text-base font-medium text-[rgba(9,8,15,0.6)]">Thanks for purchasing.</p>
+          <p className="text-base font-medium text-[rgba(9,8,15,0.6)]">Total: {totalPrice}</p>
+          <div className="modal-action mt-2 w-full">
+            <form method="dialog" className="w-full">
+
+              <button
+              onClick={handleCloseBtn}
+              className="btn w-full rounded-4xl bg-[rgba(17,0,0,0.05)]">Close</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
+            
+
             </div>
           ) : null}
         </div>
