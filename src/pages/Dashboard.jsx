@@ -117,95 +117,131 @@ const Dashboard = () => {
       </Helmet>
       
       {/* Content */}
-      <div className="bg-[rgba(149,56,226,1)]">
-        {/* Heading */}
-        <Heading
-          title={"Dashboard"}
-          subtitle={
-            "Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!"
-          }
-        ></Heading>
+<div className="bg-[rgba(149,56,226,1)]">
+  {/* Heading */}
+  <Heading
+    title={"Dashboard"}
+    subtitle={
+      "Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!"
+    }
+  ></Heading>
 
-        <div className="flex justify-center items-center gap-x-5 pb-5">
+  <div className="flex justify-center items-center gap-x-3 sm:gap-x-4 md:gap-x-5 pb-3 sm:pb-4 md:pb-5 px-4 sm:px-0">
+    <button
+      onClick={handleTheCart}
+      className={`btn rounded-3xl text-sm sm:text-base md:text-lg px-5 sm:px-7 md:px-10 py-3 sm:py-4 md:py-5 ${
+        isCartOrWishlist === "cart"
+          ? "bg-white font-extrabold text-[rgba(149,56,226,1)]"
+          : "text-white border-white bg-[rgba(149,56,226,1)] font-medium"
+      }`}
+    >
+      Cart
+    </button>
+    <button
+      onClick={handleWishlist}
+      className={`btn rounded-3xl text-sm sm:text-base md:text-lg px-5 sm:px-7 md:px-10 py-3 sm:py-4 md:py-5 ${
+        isCartOrWishlist === "wishlist"
+          ? "bg-white font-extrabold text-[rgba(149,56,226,1)]"
+          : "text-white border-white bg-[rgba(149,56,226,1)] font-medium"
+      }`}
+    >
+      Wishlist
+    </button>
+  </div>
+</div>
+
+
+
+      {/* Cart, Total Cost, Sorting, Purchase */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 md:py-10">
+
+  <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-0">
+
+    <h1 className="text-xl sm:text-2xl font-bold max-md:mx-auto">
+      {isCartOrWishlist === "cart" ? "Cart" : "WishList"}
+    </h1>
+
+    {isCartOrWishlist === "cart" ? (
+      <div className="flex flex-wrap items-center gap-3 sm:gap-4 md:gap-x-5 w-full sm:w-auto max-md:text-center">
+        <h1 className="text-lg sm:text-xl md:text-2xl font-bold w-full sm:w-auto">
+          Total cost: {totalPrice}
+        </h1>
+
+        <div className="max-md:mx-auto space-x-3">
           <button
-            onClick={handleTheCart}
-            className={`btn rounded-3xl text-lg px-10 py-5 ${isCartOrWishlist === "cart" ? "bg-white font-extrabold text-[rgba(149,56,226,1)]" : "text-white border-white bg-[rgba(149,56,226,1)] font-medium"}`}
-          >
-            Cart
-          </button>
-          <button
-            onClick={handleWishlist}
-            className={` btn rounded-3xl px-10 text-lg py-5  ${isCartOrWishlist === "wishlist" ? "bg-white font-extrabold text-[rgba(149,56,226,1)]" : "text-white border-white bg-[rgba(149,56,226,1)] font-medium"}`}
-          >
-            Wishlist
-          </button>
+          onClick={handleSortByPrice}
+          className="btn btn-primary btn-sm sm:btn-md"
+        >
+          Sort by Price <FaSortNumericUpAlt />
+        </button>
+
+        <button
+          disabled={purchaseBtn}
+          onClick={handleThePurchase}
+          className="btn btn-primary btn-sm sm:btn-md"
+        >
+          Purchase
+        </button>
         </div>
-      </div>
 
-      <div className="container mx-auto py-10">
-        <div className="flex justify-between items-center">
-          <h1 className="text-2xl font-bold">
-            {isCartOrWishlist === "cart" ? "Cart" : "WishList"}
-          </h1>
-
-          {isCartOrWishlist === "cart" ? (
-            <div className="flex items-center gap-x-5">
-              <h1 className="text-2xl font-bold">Total cost: {totalPrice}</h1>
-
-              <button onClick={handleSortByPrice} className="btn btn-primary">
-                Sort by Price <FaSortNumericUpAlt />
-              </button>
-
-              <button
-              disabled={purchaseBtn}
-              onClick={handleThePurchase}
-              className="btn btn-primary">Purchase</button>
-
-                {/* Modal */}
-              <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
-        <div className="modal-box flex flex-col justify-center items-center gap-y-3 w-1/3">
-          <img className="size-18" src={GroupImage} alt="Payment Image" />
-          <h3 className="font-bold text-2xl">Payment Successfully</h3>
-          <p className="text-base font-medium text-[rgba(9,8,15,0.6)]">Thanks for purchasing.</p>
-          <p className="text-base font-medium text-[rgba(9,8,15,0.6)]">Total: {totalPrice}</p>
-          <div className="modal-action mt-2 w-full">
-            <form method="dialog" className="w-full">
-
-              <button
-              onClick={handleCloseBtn}
-              className="btn w-full rounded-4xl bg-[rgba(17,0,0,0.05)]">Close</button>
-            </form>
-          </div>
-        </div>
-      </dialog>
-            
-
+        {/* Modal */}
+        <dialog
+          id="my_modal_5"
+          className="modal modal-bottom sm:modal-middle"
+        >
+          <div className="modal-box flex flex-col justify-center items-center gap-y-3 w-full sm:w-2/3 md:w-1/2 lg:w-1/3 px-4 sm:px-6">
+            <img className="size-14 sm:size-16 md:size-18" src={GroupImage} alt="Payment Image" />
+            <h3 className="font-bold text-xl sm:text-2xl text-center">
+              Payment Successfully
+            </h3>
+            <p className="text-sm sm:text-base font-medium text-[rgba(9,8,15,0.6)] text-center">
+              Thanks for purchasing.
+            </p>
+            <p className="text-sm sm:text-base font-medium text-[rgba(9,8,15,0.6)] text-center">
+              Total: {totalPrice}
+            </p>
+            <div className="modal-action mt-2 w-full">
+              <form method="dialog" className="w-full">
+                <button
+                  onClick={handleCloseBtn}
+                  className="btn w-full rounded-4xl bg-[rgba(17,0,0,0.05)]"
+                >
+                  Close
+                </button>
+              </form>
             </div>
-          ) : null}
-        </div>
+          </div>
+        </dialog>
       </div>
+    ) : null}
+  </div>
+</div>
+
+
+
+
+
+
 
       {isCartOrWishlist === "cart" ? (
-        <div id="cart" className="container mx-auto">
-          {carts.map((cart, index) => (
-            <Cart handleRemove={handleRemove} key={index} cart={cart}></Cart>
-          ))}
-        </div>
-      )
-      :
-      (
-         <div id="wishlist" className="container mx-auto">
-         {
-          wishlists.map((wishlist,index) => <Wishlist
-          key={index}
-          wishlist={wishlist}
-          handleRemove={handleRemove}
-          handleAddToCard={handleAddToCard}
-          ></Wishlist>)
-         }
-        </div>
-      )
-      }
+  <div id="cart" className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
+    {carts.map((cart, index) => (
+      <Cart handleRemove={handleRemove} key={index} cart={cart}></Cart>
+    ))}
+  </div>
+) : (
+  <div id="wishlist" className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
+    {wishlists.map((wishlist, index) => (
+      <Wishlist
+        key={index}
+        wishlist={wishlist}
+        handleRemove={handleRemove}
+        handleAddToCard={handleAddToCard}
+      ></Wishlist>
+    ))}
+  </div>
+)}
+      
     </div>
   );
 };

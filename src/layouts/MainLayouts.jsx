@@ -37,7 +37,7 @@ const MainLayouts = () => {
             }
 
             {/* Components */}
-            <main className='grow min-h-screen mb-20'>
+            <main className='grow min-h-screen'>
                 <Outlet></Outlet>
             </main>
 
