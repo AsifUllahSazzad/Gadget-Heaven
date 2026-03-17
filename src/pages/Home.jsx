@@ -17,19 +17,19 @@ const Home = () => {
                     <title>Home | Gadget Heaven</title>
                   </Helmet>
 
-            {/* Category and Data */}
-            <div className='container mx-auto mt-50 lg:mt-105'>
-           
-                <div className='flex flex-col lg:flex-row'>
-                    {/* Side Category */}
-                   <div className='lg:mr-10'>
-                     <SideCategory category={categories}></SideCategory>
-                   </div>
+           {/* Category and Data */}
+<div className='container mx-auto mt-50 lg:mt-105 mb-10'>
+  <div className='flex flex-col lg:flex-row'>
+    {/* Side Category */}
+    <div className='lg:mr-5 lg:shrink-0'>
+      <SideCategory category={categories}></SideCategory>
+    </div>
 
-                    <Outlet></Outlet>
-                </div>
-
-            </div>                
+    <div className='flex-1 min-w-0'>
+      <Outlet></Outlet>
+    </div>
+  </div>
+</div>            
             
         </div>
     );

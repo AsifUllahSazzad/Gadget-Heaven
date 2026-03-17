@@ -1,6 +1,6 @@
 const Footer = ({title, subtitle}) => {
     return (
-        <div className='container mx-auto p-10 2xl:mt-5 mt-14 bg-white'>
+        <div className='container mx-auto p-10  bg-white'>
 
             <div className='text-center space-y-3 pb-5'>
                 <h1 className='text-3xl font-bold'>{title}</h1>

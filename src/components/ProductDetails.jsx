@@ -70,7 +70,7 @@ const ProductDetails = () => {
             </Helmet>
 
            {/* Heading */}
-<div className="bg-[rgba(149,56,226,1)] h-80">
+<div className="bg-[rgba(149,56,226,1)] h-80 max-sm:mb-140">
   <Heading
     title={"Product Details"}
     subtitle={

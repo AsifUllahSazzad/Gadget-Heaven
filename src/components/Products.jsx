@@ -48,7 +48,7 @@ const Products = () => {
   }, [items, category]);
 
   return (
-    <div>
+    <div className="lg:mt-15">
   {categoryData.length === 0 ? (
 
     <div className="w-full min-h-48 sm:min-h-64 md:min-h-80 lg:min-h-112.5 flex justify-center items-center px-4">
