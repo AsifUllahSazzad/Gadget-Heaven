@@ -49,20 +49,22 @@ const Products = () => {
 
   return (
     <div>
-      {categoryData.length === 0 ? (
-        
-        <div className="w-3/1 min-h-112.5 flex justify-center items-center mx-auto">
-            <h1 className="text-5xl font-bold text-[rgba(149,56,226,1)]">No Data Found</h1>
-        </div>      
+  {categoryData.length === 0 ? (
 
-      ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {categoryData.map((data) => (
-            <Product key={data.id} product={data}></Product>
-          ))}
-        </div>
-      )}
+    <div className="w-full min-h-48 sm:min-h-64 md:min-h-80 lg:min-h-112.5 flex justify-center items-center px-4">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[rgba(149,56,226,1)] text-center">
+        No Data Found
+      </h1>
     </div>
+
+  ) : (
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-5 mx-4 lg:mx-0 max-lg:mt-5">
+      {categoryData.map((data) => (
+        <Product key={data.id} product={data}></Product>
+      ))}
+    </div>
+  )}
+</div>
   );
 };
 

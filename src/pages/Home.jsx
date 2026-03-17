@@ -18,11 +18,11 @@ const Home = () => {
                   </Helmet>
 
             {/* Category and Data */}
-                    <div className='container mx-auto mt-105'>
+            <div className='container mx-auto mt-50 lg:mt-105'>
            
-                <div className='flex'>
+                <div className='flex flex-col lg:flex-row'>
                     {/* Side Category */}
-                   <div className='mr-10'>
+                   <div className='lg:mr-10'>
                      <SideCategory category={categories}></SideCategory>
                    </div>
 
