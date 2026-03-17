@@ -1,13 +1,14 @@
 import { BsCart3 } from "react-icons/bs";
 import { Link, NavLink } from "react-router-dom";
 import { FaRegHeart } from "react-icons/fa";
+import './HomeNavbar.css'
 
 const HomeNavbar = () => {
 
   const navClass = ({ isActive }) =>
   isActive
     ? "bg-gray-700 p-2 px-3 rounded-lg text-white"
-    : 'text-white relative inline-block text-black after:content-[] after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full';
+    : 'lg:text-white relative inline-block text-black after:content-[] after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full';
 
      const links = <>
             <NavLink to="/" className={navClass}><li>Home</li></NavLink>
@@ -44,7 +45,19 @@ const HomeNavbar = () => {
               {links}
             </ul>
           </div>
-          <Link to='/' className="btn btn-ghost text-xl">Gadget Heaven</Link>
+         <Link 
+  to="/" 
+  className="
+    btn btn-ghost 
+    text-sm 
+    sm:text-base 
+    md:text-lg 
+    lg:text-xl 
+    px-2 sm:px-3 md:px-4
+  "
+>
+  Gadget Heaven
+</Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 space-x-8 items-center">
@@ -52,9 +65,9 @@ const HomeNavbar = () => {
           </ul>
         </div>
         <div className="navbar-end space-x-3">
-          <NavLink to='/dashboard#cart' className="btn btn-circle bg-white"><BsCart3/></NavLink>
+          <NavLink to='/dashboard#cart' className={`hover:border-2 hover:border-black btn btn-circle bg-white ${({ isActive }) => `nav-btn ${isActive ? 'active' : ''}`}`}><BsCart3/></NavLink>
 
-          <NavLink to='/dashboard#wishlist' className="btn btn-circle bg-white"><FaRegHeart /></NavLink>
+          <NavLink to='/dashboard#wishlist' className={`hover:border-2 hover:border-black btn btn-circle bg-white ${({ isActive }) => `nav-btn ${isActive ? 'active' : ''}`}`}><FaRegHeart /></NavLink>
         </div>
       </div>
   );
