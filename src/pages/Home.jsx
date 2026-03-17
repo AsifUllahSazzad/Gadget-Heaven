@@ -14,7 +14,7 @@ const Home = () => {
         <div>
             {/* Dynamic Titles */}
                   <Helmet>
-                    <title>Home</title>
+                    <title>Home | Gadget Heaven</title>
                   </Helmet>
 
             {/* Category and Data */}

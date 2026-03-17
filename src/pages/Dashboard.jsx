@@ -113,7 +113,7 @@ const Dashboard = () => {
     <div>
       {/* Dynamic Titles */}
       <Helmet>
-        {isCartOrWishlist === 'cart' ? <title>Dashboard || Cart</title> : <title>Dashboard || Wishlist</title>}
+        {isCartOrWishlist === 'cart' ? <title>Dashboard | Cart</title> : <title>Dashboard | Wishlist</title>}
       </Helmet>
       
       {/* Content */}

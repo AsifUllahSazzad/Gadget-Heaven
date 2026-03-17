@@ -66,7 +66,7 @@ const ProductDetails = () => {
         <div>
 
             <Helmet>
-                <title>Product Details</title>
+                <title>Product Details | Gadget Heaven</title>
             </Helmet>
 
             {/* Heading */}

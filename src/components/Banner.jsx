@@ -5,7 +5,6 @@ const Banner = ({ title, subtitle }) => {
   return (
     <div className="bg-[#9548e2] rounded-2xl p-2 m-5">
       <div className="container mx-auto h-120 space-y-6">
-        
         {/* Navbar */}
         <HomeNavbar></HomeNavbar>
 
@@ -13,7 +12,10 @@ const Banner = ({ title, subtitle }) => {
         <div className="text-white text-center space-y-6">
           <h1 className="text-5xl font-bold">{title}</h1>
           <p className="w-182 mx-auto text-base font-thin">{subtitle}</p>
-          <button className="btn rounded-3xl text-[#9538e2]">Shop Now</button>
+
+          <a href="#shop">
+            <button className="btn rounded-3xl text-[#9538e2]">Shop Now</button>
+          </a>
         </div>
 
         {/* Hero Image */}
@@ -26,7 +28,7 @@ const Banner = ({ title, subtitle }) => {
         </div>
 
         {/* Heading */}
-        <h1 className="text-center font-bold text-4xl mt-10">
+        <h1 id="shop" className="text-center font-bold text-4xl mt-10">
           Explore Cutting-Edge Gadgets
         </h1>
       </div>

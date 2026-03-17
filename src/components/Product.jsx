@@ -18,7 +18,7 @@ const Product = ({ product }) => {
         <div className="card-body">
           <h2 className="card-title">{name}</h2>
           <h3 className="text-[rgba(9,8,15,0.6)] text-lg font-medium">
-            Price: {price}
+            Price: ${price}
           </h3>
           <div className="card-actions justify-start">
             <NavLink

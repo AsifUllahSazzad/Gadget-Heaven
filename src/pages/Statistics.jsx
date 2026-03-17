@@ -13,7 +13,7 @@ const Statistics = () => {
         <div>
             {/* Dynamic Titles */}
                   <Helmet>
-                    <title>Statistics</title>
+                    <title>Statistics | Gadget Heaven</title>
                   </Helmet>
 
 
