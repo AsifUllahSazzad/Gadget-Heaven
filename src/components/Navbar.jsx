@@ -4,10 +4,15 @@ import { FaRegHeart } from "react-icons/fa";
 
 const Navbar = () => {
 
+  const navClass = ({ isActive }) =>
+  isActive
+    ? "bg-gray-700 p-2 px-3 rounded-lg text-[rgba(11,11,11,0.7)] text-white"
+    : 'text-[rgba(11,11,11,0.7)] relative inline-block text-black after:content-[] after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full';
+
     const links = <>
-            <NavLink to='/' className={'text-[rgba(11,11,11,0.7)]'}><li>Home</li></NavLink>
-            <NavLink to='/statistics' className={'text-[rgba(11,11,11,0.7)]'}><li>Statistics</li></NavLink>
-            <NavLink to='/dashboard' className={'text-[rgba(11,11,11,0.7)]'}><li>Dashboard</li></NavLink>
+            <NavLink to='/' className={navClass}><li>Home</li></NavLink>
+            <NavLink to='/statistics' className={navClass}><li>Statistics</li></NavLink>
+            <NavLink to='/dashboard' className={navClass}><li>Dashboard</li></NavLink>
     </>
 
   return ( 
@@ -41,7 +46,7 @@ const Navbar = () => {
           <NavLink to='/' className="btn btn-ghost text-xl">Gadget Heaven</NavLink>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 space-x-8">
+          <ul className="menu menu-horizontal px-1 space-x-8 items-center">
             {links}
           </ul>
         </div>

@@ -1,12 +1,18 @@
 import { BsCart3 } from "react-icons/bs";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { FaRegHeart } from "react-icons/fa";
 
 const HomeNavbar = () => {
+
+  const navClass = ({ isActive }) =>
+  isActive
+    ? "bg-gray-700 p-2 px-3 rounded-lg text-white"
+    : 'text-white relative inline-block text-black after:content-[] after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full';
+
      const links = <>
-            <NavLink to="/" className={'text-white'}><li>Home</li></NavLink>
-            <NavLink to='/statistics' className={'text-white'}><li>Statistics</li></NavLink>
-            <NavLink to='/dashboard' className={'text-white'}><li>Dashboard</li></NavLink>
+            <NavLink to="/" className={navClass}><li>Home</li></NavLink>
+            <NavLink to='/statistics' className={navClass}><li>Statistics</li></NavLink>
+            <NavLink to='/dashboard' className={navClass}><li>Dashboard</li></NavLink>
     </>
 
 
@@ -38,10 +44,10 @@ const HomeNavbar = () => {
               {links}
             </ul>
           </div>
-          <NavLink to='/' className="btn btn-ghost text-xl">Gadget Heaven</NavLink>
+          <Link to='/' className="btn btn-ghost text-xl">Gadget Heaven</Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 space-x-8">
+          <ul className="menu menu-horizontal px-1 space-x-8 items-center">
             {links}
           </ul>
         </div>
